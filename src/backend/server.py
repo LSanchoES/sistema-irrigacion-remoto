@@ -1,14 +1,19 @@
 import flask
 from flask import request, jsonify, json
+from flask_cors import CORS, cross_origin
 import ElectroValve as ev
 
 app = flask.Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 app.config["DEBUG"] = True
 
 EV = ev.ElectroValve("JARDIBRIC")
 
+#url = "http://127.0.0.1:5000//api/v1/resources/electro-valve/on" URL TEST
 
 @app.route('/', methods=['GET'])
+@cross_origin()
 def home():
     return "<h1>Irrigation Backend</h1>"
 

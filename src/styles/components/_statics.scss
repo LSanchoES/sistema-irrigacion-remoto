@@ -1,11 +1,13 @@
 .static__title{
     display: flex;
     justify-content: center;
-    background-color: $tertiary;
-    color: $dark-gray;
-    font-size: 5ch;
-    padding: 1rem;
+    background-color: $primary;
+    color: $white-styled;
+    font-weight: bold;
+    font-size: 3ch;
+    padding: 0.5rem;
+    text-align: center;
     text-shadow: 0px 0px 35px $primary-low;
-    border-bottom: 1px solid $black-styled;
+    box-shadow: 0px 0px 10px $black-styled;
 
 }
