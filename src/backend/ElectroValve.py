@@ -1,22 +1,22 @@
 #from gpiozero import LED
 
-class Pump:
+class ElectroValve:
     def __init__(self, model):
         self.model = model
         self.PIN = 19
         self.on = False
 
-    def on():
+    def setOn(self):
         self.on = True
 
-    def off():
-        self.off = False
+    def setOff(self):
+        self.on = False
 
-    def isOn():
+    def isOn(self):
         return self.on
 
-    def getModel():
+    def getModel(self):
         return self.model
 
-    def getPIN():
+    def getPin(self):
         return self.PIN
