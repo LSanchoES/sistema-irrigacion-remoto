@@ -1,0 +1,30 @@
+.control-sidebar__container{
+    background-color: $dark-gray;
+}
+
+.control-sidebar__components{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $black-styled;
+    margin-top: 2rem;
+    background-color: $primary;
+    color: $black-styled;
+    padding: 1rem;
+    border-radius: 16px;
+    &:first-child{
+        margin-top: 1rem;
+    }
+
+
+    h1{
+        background-color: $primary;
+        color: $white-styled;
+    }
+    h2{
+        background-color: $primary;
+        color: $white-styled;
+    }
+
+}

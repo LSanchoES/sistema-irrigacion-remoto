@@ -1,0 +1,32 @@
+.camera__container{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.camera__screen{
+    object-fit: contain;
+    
+}
+.camera__button{
+    position:relative;
+    left: 35vw;
+
+    button{
+        outline: none;
+        border-radius: 12px;
+        padding: 1rem;
+        color: $primary;
+        font-weight: bold;
+        background-color: transparent;
+        border: none;
+        box-shadow: -3px -3px 5px $primary inset;
+        transition: all 400ms;
+        &:hover{
+            cursor: pointer;
+            color: $primary-low;
+            box-shadow: -3px -3px 5px $primary-low inset;
+
+        }
+    }
+}

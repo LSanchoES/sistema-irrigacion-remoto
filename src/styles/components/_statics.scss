@@ -5,9 +5,17 @@
     color: $white-styled;
     font-weight: bold;
     font-size: 3ch;
-    padding: 0.5rem;
     text-align: center;
     text-shadow: 0px 0px 35px $primary-low;
     box-shadow: 0px 0px 10px $black-styled;
+    height: 10vh;
 
+}
+.static__switch-container{
+    background-color: $primary;
+    cursor: pointer;
+    h1{
+        background-color: $primary;
+        color: $white-styled;
+    }
 }

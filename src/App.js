@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { apiResp } from "./api/apiResp";
+import { Camera } from './components/Camera';
+import { ControlSideBar } from './components/ControlSideBar';
+import { ElectroValveProgram } from './components/ElectroValveProgram';
+import { ElectroValveSwitch } from './components/ElectroValveSwitch';
 import { Head } from './components/Head';
 
 const App = () => {
@@ -13,9 +17,8 @@ const App = () => {
   
   useEffect(() => {
     
-    const onAndOff = {
-      on: "true"
-    }
+    const onAndOff = "true"
+  
     
     // const headers ={
     //   'Content-type': 'application/json; charset=UTF-8',
@@ -90,6 +93,21 @@ const App = () => {
     <>
       <Head props = {model.data}/>
 
+      <div className="dashboard__container">
+        
+        <div className="dashboard__sidebar"> 
+          <ControlSideBar />
+        </div>
+        <div className="dashboard__switch">
+          <ElectroValveSwitch />
+        </div>
+        <div className="dashboard__programmer">
+          <ElectroValveProgram />
+        </div>
+        <div className="dashboard__camera">
+          <Camera />
+        </div>
+      </div>
     </>
   )
 }

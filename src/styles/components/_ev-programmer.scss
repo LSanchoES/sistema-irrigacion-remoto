@@ -1,0 +1,30 @@
+.ev-programmer__container{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 30vh;
+    background-color: $dark-gray;
+    box-shadow: -2px -2px 15px $white-styled inset;
+}
+.ev-programmer__daywrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid $primary;
+    border-radius: 16px;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: $primary;
+    border: 2px solid $black-styled;
+    h3{
+        background-color: $primary; 
+        color: $white-styled;  
+  
+    }
+    input{
+        background-color: $primary; 
+        color: $white-styled;  
+    }
+    
+}
