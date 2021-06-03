@@ -1,61 +1,100 @@
 
 .dashboard__container{
-    display: grid;
-    grid-template-areas:
-      'menu main main right right right'
-      'menu nothing nothing right right right'
-      'menu footer footer footer footer footer';
-    grid-gap: 10px;
-    padding: 1px;
-    background: rgb(51,51,51);
-    background: linear-gradient(67deg, rgba(51,51,51,1) 53%, rgba(140,140,140,1) 100%);
-
-}
-.dashboard__sidebar{
-    grid-area: menu;
-    background-color: $dark-gray;
-    height: 90vh;
-    width: 15vw;
-    margin-right: 1rem;
-    padding: 1rem;
-}
-.dashboard__switch{
     display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: $primary;
-    grid-area: main;
-    border-radius: 50%;
-    height: 20vh;
-    width: 10vw;
-    margin: 2rem;
-    padding: 1rem;
-    border: 2px solid $black-styled;
-    cursor: pointer;
-    transition: all 400ms;
-    box-shadow: -2px -2px 5px $black-styled inset;
-    
-    &:hover{
-        box-shadow: -2px -2px 5px $white-styled inset;
-    }
+    background-image: url(../../assets/img/silver-metallic-textured-background.jpg);
+    height: 100vh;
 }
-.dashboard__programmer{
-    grid-area: right;
-    margin: 2rem;
-    height: 30vh;
-    width: 50vw;
-    border-radius: 16px;
+
+.dashboard__valves{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+.dashboard__valve-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+    
+    min-width: 25vw;
+    min-height: 25vh;
+    
+    color: $white-styled;
+    border-radius: 12px;
+    border: 3px solid $dark-gray;
+
+    background-color: $black-styled;
+
+    box-shadow: 
+        inset 5px 5px 10px $dark-gray, 
+        inset -5px -5px 10px $black-styled; 
+
+    h1{
+    background-color: $black-styled;
+
+    }
+    h2{
+    background-color: $black-styled;
+
+    }
+    transition: all 400ms;
+    cursor: pointer;
+    &:hover{
+
+        box-shadow: 
+        inset 5px 5px 10px $white-styled, 
+        inset -5px -5px 10px $tertiary-low;
+    }
+
 
 }
-.dashboard__camera{
-    overflow: hidden;
-    grid-area: footer;
-    width: 60vw;
-    height: 40vh;
-    margin-top: -10vh;
-    margin-left: 5rem;
-    border: 2px solid $black-styled;
-    box-shadow: 2px 2px 5px $black-styled;
+.dashboard__controls{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem;
+
+    padding: 1rem;
+
+
+}
+.dashboard__camera-card{
+    display: flex;
+    border: 3px solid $dark-gray;
+    margin: 0.5rem;
+
+    padding: 1rem;
+    font-size: 4rem;
+    min-width: 25vw;
+    min-height: 25vh;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: $white-styled;
+
+background-color: $black-styled;
+
+    box-shadow: 
+    inset 5px 5px 10px $dark-gray, 
+    inset -5px -5px 10px $black-styled; 
+    
+    i{
+    background-color: $black-styled;
+ 
+    }
+    transition: all 400ms;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 
+        inset 5px 5px 10px $white-styled, 
+        inset -5px -5px 10px $tertiary-low;
+    }
 
 }

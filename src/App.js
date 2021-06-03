@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { apiResp } from "./api/apiResp";
-import { Camera } from './components/Camera';
-import { ControlSideBar } from './components/ControlSideBar';
-import { ElectroValveProgram } from './components/ElectroValveProgram';
-import { ElectroValveSwitch } from './components/ElectroValveSwitch';
-import { Head } from './components/Head';
+import { Humedad } from './components/ControlComponents/Humedad';
+import { Temperatura } from './components/ControlComponents/Temperatura';
+import { ElectroValve1Card } from './components/ElectroValveComponents/ElectroValve1Card';
+import { ElectroValve2Card } from './components/ElectroValveComponents/ElectroValve2Card';
+import { ElectroValve3Card } from './components/ElectroValveComponents/ElectroValve3Card';
 
 const App = () => {
   
@@ -91,22 +91,24 @@ const App = () => {
   
   return (
     <>
-      <Head props = {model.data}/>
 
       <div className="dashboard__container">
-        
-        <div className="dashboard__sidebar"> 
-          <ControlSideBar />
-        </div>
-        <div className="dashboard__switch">
-          <ElectroValveSwitch />
-        </div>
-        <div className="dashboard__programmer">
-          <ElectroValveProgram />
-        </div>
-        <div className="dashboard__camera">
-          <Camera />
-        </div>
+      <h1 className="static__title">Irrigation App</h1>
+      <div className="dashboard__valves">
+        <ElectroValve1Card />
+        <ElectroValve2Card />
+        <ElectroValve3Card />
+      </div>
+
+      <div className="dashboard__controls">
+          <Humedad />
+          <Temperatura />
+          <div className="dashboard__camera-card"> 
+            <i class="fas fa-camera"></i>
+          </div>
+      </div>
+
+
       </div>
     </>
   )
