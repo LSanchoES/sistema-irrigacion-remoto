@@ -6,13 +6,16 @@
     justify-content: center;
     align-items: center;
     background-image: url(../../assets/img/silver-metallic-textured-background.jpg);
-    height: 100vh;
+    background-repeat: repeat-y;
 }
 
 .dashboard__valves{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     padding: 1rem;
+    
 }
 .dashboard__valve-card{
     display: flex;
@@ -60,8 +63,9 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0.5rem;
-
     padding: 1rem;
+    justify-content: center;
+    align-items: center;
 
 
 }
@@ -72,14 +76,15 @@
 
     padding: 1rem;
     font-size: 4rem;
-    min-width: 25vw;
+    min-width: 50vw;
     min-height: 25vh;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
     color: $white-styled;
 
-background-color: $black-styled;
+
+    background-color: $black-styled;
 
     box-shadow: 
     inset 5px 5px 10px $dark-gray, 
