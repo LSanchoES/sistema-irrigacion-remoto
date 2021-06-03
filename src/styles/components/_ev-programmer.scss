@@ -4,7 +4,8 @@
     width: auto;
     height: 30vh;
     background-color: $dark-gray;
-    box-shadow: -2px -2px 15px $white-styled inset;
+    box-shadow: -2px 2px 10px $white-styled inset;
+
 }
 .ev-programmer__daywrap{
     display: flex;
@@ -17,6 +18,8 @@
     margin: 1rem;
     background-color: $primary;
     border: 2px solid $black-styled;
+    box-shadow: -2px -2px 5px $black-styled inset;
+
     h3{
         background-color: $primary; 
         color: $white-styled;  

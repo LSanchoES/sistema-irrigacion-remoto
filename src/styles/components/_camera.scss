@@ -2,10 +2,12 @@
     display: flex;
     flex-direction: row;
     overflow: hidden;
+
 }
 
 .camera__screen{
     object-fit: contain;
+    
     
 }
 .camera__button{
@@ -16,16 +18,17 @@
         outline: none;
         border-radius: 12px;
         padding: 1rem;
-        color: $primary;
         font-weight: bold;
         background-color: transparent;
         border: none;
-        box-shadow: -3px -3px 5px $primary inset;
+        color: $black-styled;
+        box-shadow: -3px -3px 5px $black-styled inset;
         transition: all 400ms;
         &:hover{
             cursor: pointer;
-            color: $primary-low;
-            box-shadow: -3px -3px 5px $primary-low inset;
+            box-shadow: -3px -3px 5px $primary inset;
+            color: $primary;
+
 
         }
     }
