@@ -14,7 +14,7 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 1rem;
-    
+ 
 }
 .dashboard__valve-card{
     display: flex;
@@ -28,20 +28,18 @@
     min-width: 25vw;
     min-height: 50vh;
     
-    border-radius: 50%;
+    border-radius: 12px;
     transition: all 400ms;
-
     
     color: $white-styled;
     box-shadow: 0px 0px 155px $black-styled inset;
     border: 10px double $secondary;
+
     &:hover{
 
         box-shadow: 
-        inset 5px 5px 10px $white-styled, 
+        inset 0px 0px 10px $white-styled, 
     }
-
-
 
 }
 .dashboard__controls{
@@ -69,7 +67,7 @@
     
     color: $white-styled;
     box-shadow: 0px 0px 155px $black-styled inset;
-    border-radius:50%;
+    border-radius: 12px;
     min-width: 25vw;
     min-height: 50vh;
     border: 10px double $secondary;
@@ -78,7 +76,7 @@
     cursor: pointer;
     &:hover{
         box-shadow: 
-        inset 5px 5px 10px $white-styled, 
+        inset 0px 0px 10px $white-styled, 
     }
 }
 .dashboard__camera-card{
@@ -91,7 +89,7 @@
     min-height: 50vh;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 12px;
     color: $white-styled;
     
     border: 10px double $secondary;
@@ -102,7 +100,7 @@
     cursor: pointer;
     &:hover{
         box-shadow: 
-        inset 5px 5px 10px $white-styled, 
+        inset 0px 0px 10px $white-styled, 
     }
     
 }
