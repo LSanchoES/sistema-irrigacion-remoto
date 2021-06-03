@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Camera = () => {
+export const CameraScreen = () => {
     return (
         <div className="camera__container">
             <div className="camera_screen">

@@ -1,13 +1,14 @@
 .static__title{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $black-styled;
+    align-self: flex-start;
+    color: $white-styled;
     font-weight: bold;
     text-align: center;
     text-shadow: 4px -8px 10px $dark-gray;
-    font-size: 7ch;
+    font-size: 4ch;
     padding: 1rem;
+    border-bottom: 2px solid $white-styled;
+    margin: 1rem;
     
 
 
