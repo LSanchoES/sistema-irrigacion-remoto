@@ -6,6 +6,8 @@ import { Temperatura } from '../components/ControlComponents/Temperatura';
 import { ElectroValve1Card } from '../components/ElectroValveComponents/ElectroValve1Card';
 import { ElectroValve2Card } from '../components/ElectroValveComponents/ElectroValve2Card';
 import { ElectroValve3Card } from '../components/ElectroValveComponents/ElectroValve3Card';
+import { Reloj } from './ControlComponents/Reloj';
+import { Camera } from './ControlComponents/Camera';
 
 export const Dashboard = () => {
   
@@ -92,24 +94,30 @@ export const Dashboard = () => {
   
   return (
     <>
-      <div className="dashboard__container">
-      <h1 className="static__title">Irrigation App</h1>
-      <div className="dashboard__valves">
-      <Link to='/electroValve1'><ElectroValve1Card></ElectroValve1Card></Link>
-        <Link to='/electroValve2'><ElectroValve2Card /></Link>
-        <Link to='/electroValve3'><ElectroValve3Card /></Link>
-      </div>
+        <div className="dashboard__container">
 
-      <div className="dashboard__controls">
-          <Link to='/humedad'><Humedad /></Link>
-          <Link to='/temperatura'><Temperatura /></Link>
-          <Link to='/camera'><div className="dashboard__camera-card"> 
-            <i class="fas fa-camera"></i>
-          </div></Link>
-      </div>
+          <div className="dashboard__sidebar">
+
+              <Reloj />
+
+              <Humedad />
+
+              <Temperatura />
+
+              <Camera />
+
+          </div>
+          <div className="dashboard__valves">
+            <ElectroValve1Card />
+            <ElectroValve2Card />
+            <ElectroValve3Card />
+          </div>
+
+      
 
 
-      </div>
+
+        </div>
     </>
   )
 }
