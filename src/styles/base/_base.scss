@@ -16,12 +16,15 @@ main {
 	width: 100%;
 }
 .active {
-	color: $pentakill;
+	color: $pentakill !important;
 }
 .inactive {
-	color: rgb(255, 174, 0);
+	color: rgb(255, 174, 0) !important;
 }
-
+.active-hour{
+	background-color: $quaternary !important;
+	box-shadow: 0px 0px 2px $pentakill inset  !important;
+}
 //SCROLLBAR
 
 

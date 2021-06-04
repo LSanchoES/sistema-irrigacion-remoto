@@ -177,3 +177,24 @@
         }
     }
 }
+.dashboard__valve-status{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50vw;
+    margin-left: 3rem;
+    span{
+        border: 1px solid $pentakill;
+        border-radius: 6px;
+        margin: 0.1rem;
+        padding: 0.5rem;
+        color: $pentakill;
+        cursor: pointer;
+        transition: all 400ms;
+        &:hover{
+            box-shadow: 0px 0px 15px $light-gray inset;
+        }
+    }
+}
