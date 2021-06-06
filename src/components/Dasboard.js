@@ -15,66 +15,66 @@ export const Dashboard = () => {
 
 	//POST on / off
 
-	const apiOnOff = "http://127.0.0.1:5000/api/v1/resources/electro-valve/on";
+	// const apiOnOff = "http://127.0.0.1:5000/api/v1/resources/electro-valve/on";
 
-	useEffect(() => {
-		const onAndOff = "true";
+	// useEffect(() => {
+	// 	const onAndOff = "true";
 
-		// const headers ={
-		//   'Content-type': 'application/json; charset=UTF-8',
-		// }
+	// 	// const headers ={
+	// 	//   'Content-type': 'application/json; charset=UTF-8',
+	// 	// }
 
-		apiResp
-			.post(apiOnOff, onAndOff) //, headers (si se pusieran)
-			.then((resp) => {
-				console.log("RESPONSE RECEIVED: ", resp.data);
-			})
-			.catch((err) => {
-				console.log("AXIOS ERROR: ", err);
-			});
-	}, []);
-	// Model Request
+	// 	apiResp
+	// 		.post(apiOnOff, onAndOff) //, headers (si se pusieran)
+	// 		.then((resp) => {
+	// 			console.log("RESPONSE RECEIVED: ", resp.data);
+	// 		})
+	// 		.catch((err) => {
+	// 			console.log("AXIOS ERROR: ", err);
+	// 		});
+	// }, []);
+	// // Model Request
 
-	const apiModel = "http://127.0.0.1:5000/api/v1/resources/electro-valve/model";
+	// const apiModel = "http://127.0.0.1:5000/api/v1/resources/electro-valve/model";
 
-	const [model, setModel] = useState("");
+	// const [model, setModel] = useState("");
 
-	const getModel = async () => {
-		const resp = await apiResp.get(apiModel);
-		setModel(resp);
-	};
+	// const getModel = async () => {
+	// 	const resp = await apiResp.get(apiModel);
+	// 	setModel(resp);
+	// };
 
-	useEffect(() => {
-		model.length < 1 ? getModel() : console.log(model.data);
-	}, [model]);
+	// useEffect(() => {
+	// 	model.length < 1 ? getModel() : console.log(model.data);
+	// }, [model]);
 
-	// Pin Request
-	const apiPin = "http://127.0.0.1:5000//api/v1/resources/electro-valve/pin";
+	// // Pin Request
+	// const apiPin = "http://127.0.0.1:5000//api/v1/resources/electro-valve/pin";
 
-	const [pin, setPin] = useState("");
+	// const [pin, setPin] = useState("");
 
-	const getPin = async () => {
-		const resp = await apiResp.get(apiPin);
-		setPin(resp);
-	};
+	// const getPin = async () => {
+	// 	const resp = await apiResp.get(apiPin);
+	// 	setPin(resp);
+	// };
 
-	useEffect(() => {
-		pin.length < 1 ? getPin() : console.log(pin.data);
-	}, [pin]);
+	// useEffect(() => {
+	// 	pin.length < 1 ? getPin() : console.log(pin.data);
+	// }, [pin]);
 
 	// isOn Request
-	const isOnApi = "http://127.0.0.1:5000//api/v1/resources/electro-valve/ison";
+	// const isOnApi = "http://127.0.0.1:5000//api/v1/resources/electro-valve/ison";
 
-	const [isOn, setIsOn] = useState("");
+	// const [isOn, setIsOn] = useState("");
 
-	const getisOn = async () => {
-		const resp = await apiResp.get(isOnApi);
-		setIsOn(resp);
-	};
+	// const getisOn = async () => {
+	// 	const resp = await apiResp.get(isOnApi);
+	// 	setIsOn(resp);
+	// };
 
-	useEffect(() => {
-		isOn.length < 1 ? getisOn() : console.log(isOn.data);
-	}, [isOn]);
+	// useEffect(() => {
+	// 	isOn.length < 1 ? getisOn() : console.log(isOn.data);
+	// }, [isOn]);
 
 	return (
 		<>

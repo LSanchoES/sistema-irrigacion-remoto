@@ -29,7 +29,7 @@ export const TemperaturaScreen = () => {
 	};
 	return (
 		<div>
-			<Line data={data} options={options} width={800} responsive={true} />
+			<Line data={data} options={options} width={800}/>
 		</div>
 	);
 };

@@ -9,7 +9,7 @@ export const Humedad = () => {
 
 
     return (
-        <div div className="dashboard__control-components">
+        <div className="dashboard__control-components">
 
                 <h1>Humidity</h1> 
                 <CircularProgressbar value={percentage} text={`${percentage}%`} />
