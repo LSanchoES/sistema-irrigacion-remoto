@@ -1,31 +1,64 @@
-.valves__form{
+.valves__time-form{
     display: flex;
+    text-align: center;
+    flex-direction: row;
     flex-wrap: wrap;
-    flex-direction: column;
-    background-color: $pentakill;
-    padding: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid  $pentakill;
+    border-top: 2px solid  $pentakill;
     margin: 1rem;
-    font-weight: bold;
-    box-shadow: 0px 0px 5px $quaternary;
-    border-radius: 12px;
+    background-color: $pentakill;
+    box-shadow: 0px 0px 20px $white-styled inset;
+    transition: all 500ms;
+    &:hover{
+        box-shadow: 0px 0px 0px $white-styled inset;
 
-    input{
-
-        margin: 1rem;
-        background-color: $white-styled;
+    }
+    label{
+        font-weight: bold;
+        padding: 0.5rem;
+        width: 100%;
+    }
+    input[type=number]{
+        border: 2px solid black;
         border-radius: 12px;
         outline: none;
-        padding: 1rem;
-        font-weight: bold;
-        color: $dark-gray;
-    }
-    input[type="submit"]{
-        background-color: $primary;
-        color: $light-gray;
-        font-weight: bold;
-        padding: 1rem;
-        outline: none;
-    }
+        cursor: pointer;
+        background: transparent;
+        box-shadow: 0px 0px 4px $white-styled inset;
 
+        transition: all 400ms;
+        padding: 0.5rem;
+        &:hover{
+            box-shadow: -2px -2px 50px $white-styled inset;
+        }
+    }
+    input[type=submit]{
+        width: 100%;
+        cursor: pointer;
+        box-shadow: 0px 0px 4px $white-styled inset;
+        border: none;
+        padding: 0.5rem;
+        font-style: italic;
+        font-weight: bold;
+        transition: all 400ms;
+        margin: 1rem;
+        &:hover{
+            box-shadow: -2px -2px 50px $white-styled inset;
+            ;
+        }
+    }
+}
+.dashboard__textfield{
+    label{
+        position: initial;
+        margin-bottom: -1rem;
+        font-size: 2.5ch;
 
+    }
+    input{
+        position: initial;
+    }
 }
