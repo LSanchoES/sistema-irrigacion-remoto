@@ -1,6 +1,5 @@
 import moment from "moment";
-import React, { useState } from "react";
-import { removeArrayItem } from "../../helpers/removeArrayItem";
+import React, { useRef, useState } from "react";
 import { ElectroValveTimer } from "./ElectroValveTimer";
 
 export const ElectroValve1Card = () => {
@@ -12,36 +11,32 @@ export const ElectroValve1Card = () => {
 	const [enterTimer, setEnterTimer] = useState([]);
 	//NEW COMPONENT ID
 	const [timerNumber, setTimerNumber] = useState(1);
-
-	console.log(timerNumber)
+	//NEW COMPONENT REF
+	const timerComponents = useRef([])
 	//REMOVE TIMER COMPONENT
 	const removeTimer = () => {
-		setTimerNumber( timerNumber > 0 ? timerNumber => timerNumber - 1 : timerNumber);
-
-		if(enterTimer.length > 1){
-			// let filteredList = (enterTimer.filter(item => console.log(item)))
-			let filteredList = (enterTimer.filter(item => item.key == (timerNumber +1)  ))
-			// setEnterTimer(enterTimer.splice(timerNumber, timerNumber))
-			setEnterTimer(filteredList)
-		}else{
-			setEnterTimer([])};
-
-		// console.log(enterTimer)
-	}
 	
+		 setTimerNumber( timerNumber > 0 ? timerNumber => timerNumber - 1 : timerNumber);
+		 timerComponents.current[time].remove()
+	}
+
 	//ADD TIMER COMPONENT
 	const newTimer = () => {
-		setTimerNumber(timerNumber => timerNumber+1);
+
+		
 		setEnterTimer(
 			enterTimer.concat(
-				<section className="dashboard__timer-section"key={timerNumber}>
-				<ElectroValveTimer
-					initId={`init-valve1-${timerNumber}`}
-					timerId={`timer-valve1-${timerNumber}`}
-				/>
+				<section className="dashboard__timer-section"key={time} ref={item => (timerComponents.current[time] = item)} id={time}>
+					<i className="fas fa-trash" onClick={removeTimer}></i>
+
+					<ElectroValveTimer
+						initId={`init-valve1-${timerNumber}`}
+						timerId={`timer-valve1-${timerNumber}`}
+						/>
 				</section>
 			)
-		);
+			);
+		setTimerNumber(timerNumber => timerNumber+1);
 	};
 	return (
 		<div className="dashboard__valve-card">
@@ -49,7 +44,6 @@ export const ElectroValve1Card = () => {
 				<h1>Valve 1</h1>
 				<h2>
 					<i className="far fa-plus-square" onClick={newTimer}></i>
-					<i class="fas fa-trash" onClick={removeTimer}></i>
 				</h2>
 				<h2 className="active">
 					<i className="fas fa-power-off"></i>

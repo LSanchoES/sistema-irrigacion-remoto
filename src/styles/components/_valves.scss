@@ -1,29 +1,44 @@
 .valves__time-form{
     display: flex;
     text-align: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
-    width: 90%;
+    width: 20vw;
     border-bottom: 2px solid  $pentakill;
     border-top: 2px solid  $pentakill;
-    margin: 1rem;
+ 
     background-color: $pentakill;
-    box-shadow: 0px 0px 20px $white-styled inset;
+    box-shadow: 0px 0px 0px $white-styled inset;
     transition: all 500ms;
-    &:hover{
-        box-shadow: 0px 0px 0px $white-styled inset;
 
+    section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
     label{
+        
         font-weight: bold;
+        margin: 1rem;
         padding: 0.5rem;
         width: 100%;
     }
+    input[type=time]{
+        outline: none;
+        cursor: pointer;
+        background: transparent;
+        margin-right: 1rem;
+
+        transition: all 400ms;
+        padding: 0.5rem;
+        svg{
+            color: red;
+        }
+
+    }
     input[type=number]{
-        border: 2px solid black;
-        border-radius: 12px;
         outline: none;
         cursor: pointer;
         background: transparent;
@@ -45,9 +60,12 @@
         font-weight: bold;
         transition: all 400ms;
         margin: 1rem;
+        border-right: 5px solid $pentakill;
+        border-left: 5px solid $pentakill;
+        box-shadow: -2px -2px 50px $white-styled inset;
         &:hover{
-            box-shadow: -2px -2px 50px $white-styled inset;
-            ;
+            transform: scale(1.1);
+            
         }
     }
 }

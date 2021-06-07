@@ -11,7 +11,7 @@ export const ElectroValveTimer = (props) => {
 
 		e.preventDefault();
 
-		let initHour = e.target[0].value;
+		// let initHour = e.target[0].value;
 		let setMins = e.target[1].value;
         
 		setMins.length === 0
@@ -42,9 +42,13 @@ export const ElectroValveTimer = (props) => {
 	return (
 		<>
 			<form className="valves__time-form" noValidate onSubmit={handleTimeSelect}>
+			<section>
+			<InputLabel id="label-init-valve1-01">Init</InputLabel>
+			<InputLabel id="label-timer-valve1-01">Time</InputLabel>
+			</section>
+			<section>
 				<TextField
 					id={props.initId}
-					label="Init Hour"
 					type="time"
 					defaultValue="00:00"
 					className="dashboard__textfield"
@@ -55,7 +59,6 @@ export const ElectroValveTimer = (props) => {
 						step: 300, // 5 min
 					}}
 				/>
-				<InputLabel id="label-timer-valve1-01">Irrigation Time</InputLabel>
 				<Select
 					labelId="label-timer-valve1-01"
 					id={props.timerId}
@@ -69,7 +72,9 @@ export const ElectroValveTimer = (props) => {
 					<MenuItem value={45}>45 min</MenuItem>
 					<MenuItem value={59}>60 min</MenuItem>
 				</Select>
+				</section>
 				<input type="submit" value="Done" />
+
 			</form>
 		</>
 	);
