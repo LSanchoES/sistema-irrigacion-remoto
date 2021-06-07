@@ -19,19 +19,22 @@ export const ElectroValve1Card = () => {
 		setTimerNumber( timerNumber > 0 ? timerNumber => timerNumber - 1 : timerNumber);
 
 		if(enterTimer.length > 1){
-			setEnterTimer(enterTimer.splice(timerNumber, timerNumber))
+			// let filteredList = (enterTimer.filter(item => console.log(item)))
+			let filteredList = (enterTimer.filter(item => item.key == (timerNumber +1)  ))
+			// setEnterTimer(enterTimer.splice(timerNumber, timerNumber))
+			setEnterTimer(filteredList)
 		}else{
 			setEnterTimer([])};
 
-		console.log(enterTimer)
+		// console.log(enterTimer)
 	}
-
+	
 	//ADD TIMER COMPONENT
 	const newTimer = () => {
 		setTimerNumber(timerNumber => timerNumber+1);
 		setEnterTimer(
 			enterTimer.concat(
-				<section className="dashboard__timer-section"key={time}>
+				<section className="dashboard__timer-section"key={timerNumber}>
 				<ElectroValveTimer
 					initId={`init-valve1-${timerNumber}`}
 					timerId={`timer-valve1-${timerNumber}`}
