@@ -11,6 +11,7 @@ import { Camera } from "./ControlComponents/Camera";
 import { TemperaturaScreen } from "./ControlComponents/TemperaturaScreen";
 
 export const Dashboard = () => {
+
 	// PRUEBA PETICIONES AJAX PARA PROYECTO (GET Y POST CON AXIOS)
 
 	//POST on / off

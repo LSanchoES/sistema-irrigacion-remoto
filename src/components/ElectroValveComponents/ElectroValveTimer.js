@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 
 export const ElectroValveTimer = (props) => {
 	//Time Slector
-    console.log(props)
+    // console.log(props)
 	const timerRef = useRef("");
 
 	const handleTimeSelect = (e) => {
