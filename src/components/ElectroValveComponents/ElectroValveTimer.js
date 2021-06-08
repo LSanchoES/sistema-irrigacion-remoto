@@ -1,36 +1,47 @@
 import React, { useRef, useState } from "react";
-import { InputLabel, MenuItem, Select, TextField } from "@material-ui/core";
+import { InputLabel, MenuItem, Select } from "@material-ui/core";
 import Swal from 'sweetalert2';
 
 export const ElectroValveTimer = (props) => {
 	//Time Slector
     // console.log(props)
-	const timerRef = useRef("");
 	const initRef = useRef("");
+	const timerRef = useRef("");
 
+	//VALIDATION
 	const handleTimeSelect = (e) => {
 
 		e.preventDefault();
 
-		// let initHour = e.target[0].value;
+		let initHour = e.target[0].value;
 		let setMins = e.target[1].value;
-        
-		setMins.length === 0
-			? timerRef.current.classList.add("invalid")
-			: console.log("Irrigation starting...");
-		setMins.length === 0
-			? (Swal.fire({
-                title: 'Invalid frame time',
-                text: 'Please select a frame time',
-                icon: 'error',
-                confirmButtonText: 'Ok'
-              }))
-			: (Swal.fire({
-                title: 'Frame time selected',
-                text: 'Irrigation programmed',
-                icon: 'success',
-                confirmButtonText: 'Ok'
-              }))
+
+		
+		if(initHour.length === 0) 
+		{
+			initRef.current.classList.add("invalid")
+		}
+		if(setMins.length === 0) 
+		{
+			timerRef.current.classList.add("invalid")
+		}
+
+		if(initHour.length === 0 || setMins.length === 0) 
+		{
+			Swal.fire({
+				title: 'Please complete all fields',
+				text: 'Hour and Timer ',
+				icon: 'error',
+				confirmButtonText: 'Ok'
+		  })}
+		if(initHour.length !== 0 && setMins.length !== 0) 
+			(Swal.fire({
+			title: 'Frame time selected',
+			text: 'Irrigation programmed',
+			icon: 'success',
+			confirmButtonText: 'Ok'
+		  }))
+
 	};
 
 	//Placeholder Timer
@@ -57,7 +68,7 @@ export const ElectroValveTimer = (props) => {
 					id={props.initId}
 					type="time"
 					defaultValue="00:00"
-					className="dashboard__textfield"
+					className="valves__textfield"
 					InputLabelProps={{
 						shrink: true,
 					}}

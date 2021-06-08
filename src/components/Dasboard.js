@@ -6,35 +6,29 @@ import { ElectroValve2Card } from "../components/ElectroValveComponents/ElectroV
 import { ElectroValve3Card } from "../components/ElectroValveComponents/ElectroValve3Card";
 import { Reloj } from "./ControlComponents/Reloj";
 import { Camera } from "./ControlComponents/Camera";
-import { TemperaturaScreen } from "./ControlComponents/TemperaturaScreen";
 
 export const Dashboard = () => {
 
 	return (
 		<>
 			<div className="dashboard__container">
-				<div className="dashboard__sidebar">
-					<Reloj />
-
-					<Humedad />
-
+				<Reloj />
+				<div className="dashboard__valves">
+					<ElectroValve1Card />
+					<ElectroValve2Card />
+					<ElectroValve3Card />
+				</div>
+				<div className="dashboard__control-components">
 					<Temperatura />
-
-					<Camera />
+					<Humedad />
 				</div>
-				<div className="dashboard__content">
 
-					    <div className="dashboard__valves">
-					    	<ElectroValve1Card />
-					    	<ElectroValve2Card />
-					    	<ElectroValve3Card />
-					    </div>
-      
-					    <div className="dashboard__charts">
-					    	<TemperaturaScreen />
-					    </div>
+				<Camera />
+				{/* <div className="dashboard__sidebar">
 
-				</div>
+				</div> */}
+
+
 			</div>
 		</>
 	);

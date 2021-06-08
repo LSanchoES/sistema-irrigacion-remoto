@@ -1,4 +1,63 @@
+
+
+.valves__valve-card{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.5rem;
+    height: 50vh;
+    width: 30vw;
+    background-color: $white-styled;
+    border-radius: 6px;
+    box-shadow: 0px 2px 5px $pentakill;
+
+    }
+.valves__valve-card-topbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $pentakill;
+    width: 100%;
+    min-height: 30%;
+    background-color: $white-styled;
+    h1{
+        color: $primary;
+        font-size: 3ch;
+        margin: 1rem;
+        user-select: none;
+    }
+    i{
+        font-size: 2ch;
+        margin: 1rem;
+        cursor: pointer;
+        transition: all 400ms;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+.valves__timer-section{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    i{  
+        position: relative;
+        top: 15px;
+        align-self: flex-end;
+        justify-self: flex-end;
+        transition: all 400ms;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+
+}
 .valves__time-form{
+
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -8,7 +67,7 @@
     width: 20vw;
     border-bottom: 2px solid  $pentakill;
     border-top: 2px solid  $pentakill;
- 
+    border-radius: 6px;
     background-color: $pentakill;
     box-shadow: 0px 0px 0px $white-styled inset;
     transition: all 500ms;
@@ -54,7 +113,7 @@
         }
     }
 }
-.dashboard__textfield{
+.valves__textfield{
     label{
         position: initial;
         margin-bottom: -1rem;

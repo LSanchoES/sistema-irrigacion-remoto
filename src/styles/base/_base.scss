@@ -19,16 +19,15 @@ main {
 	color: rgb(0, 204, 255) !important;
 }
 .inactive {
-	color: rgb(255, 174, 0) !important;
+	color: red!important;
 }
 .active-hour{
 	background-color: $quaternary !important;
 	box-shadow: 0px 0px 2px $pentakill inset  !important;
 }
 .invalid{
-	box-shadow: 0px 0px 10px red;
-	border-radius: 50%;
-	padding: 1rem;
+	border: 2px solid red;
+	
 }
 //SweetAler
 .swal2-icon{

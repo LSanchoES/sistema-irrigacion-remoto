@@ -28,7 +28,7 @@ export const ElectroValve1Card = () => {
 		if(timerNumber < 6){
 		setEnterTimer(
 			enterTimer.concat(
-				<section className="dashboard__timer-section"key={time} ref={item => (timerComponents.current[time] = item)} id={time}>
+				<section className="valves__timer-section"key={time} ref={item => (timerComponents.current[time] = item)} id={time}>
 					<i className="fas fa-trash" onClick={removeTimer}></i>
 
 					<ElectroValveTimer
@@ -49,8 +49,8 @@ export const ElectroValve1Card = () => {
 	}
 	};
 	return (
-		<div className="dashboard__valve-card">
-			<div className="dashboard__valve-card-topbar">
+		<div className="valves__valve-card">
+			<div className="valves__valve-card-topbar">
 				<h1>Valve 1</h1>
 				<h2>
 					<i className="far fa-plus-square" onClick={newTimer}></i>
