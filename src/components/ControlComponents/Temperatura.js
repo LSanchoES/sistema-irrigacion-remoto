@@ -8,11 +8,11 @@ export const Temperatura = () => {
 		labels: ["1", "2", "3", "4", "5", "6"],
 		datasets: [
 			{
-				label: "History",
+				label: "Temp",
 				data: [12, 19, 3, 5, 2, 3],
 				fill: true,
-				backgroundColor: "#b7efc5",
-				borderColor: "#b7efc5",
+				backgroundColor: "#0077b6",
+				borderColor: "#0077b6",
 
 			},
 		],
@@ -35,7 +35,7 @@ export const Temperatura = () => {
                 <div className="temperatura__content">
                 <i className="fas fa-temperature-high"></i>
         
-                <h2 className="inactive"> -4 ℃</h2>
+                <h2 className=""> 14 ℃</h2>
             </div>
 		<div className="temperatura__chart">
 			<Line data={data} options={options} width={600}/>

@@ -1,21 +1,15 @@
 .dashboard__container{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 1rem;
     background-color:$light-gray;
+    // background-color:$black-gentle;
 
 }
 
-.dashboard__sidebar{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-
-}
 .dashboard__valves{
     display: flex;
     flex-wrap: nowrap;

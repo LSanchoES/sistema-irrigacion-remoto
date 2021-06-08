@@ -58,7 +58,8 @@ export const ElectroValveTimer = (props) => {
 
 	return (
 		<>
-			<form className="valves__time-form" noValidate onSubmit={handleTimeSelect}>
+			<form className="valves__time-form " 
+			noValidate onSubmit={handleTimeSelect}>
 			<section>
 			<InputLabel id="label-init-valve1-01">Init</InputLabel>
 			<InputLabel id="label-timer-valve1-01">Time</InputLabel>
