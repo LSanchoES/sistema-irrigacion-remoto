@@ -4,6 +4,7 @@ import { ElectroValveTimer } from "./ElectroValveTimer";
 import Swal from 'sweetalert2';
 
 
+
 export const ElectroValve2Card = () => {
 	//NOW TIME
 	// const time = moment().format("HH:mm:ss");
@@ -15,11 +16,37 @@ export const ElectroValve2Card = () => {
 	const [timerNumber, setTimerNumber] = useState(1);
 	//NEW COMPONENT REF
 	const timerComponents = useRef([])
+
+
 	//REMOVE TIMER COMPONENT
 	const removeTimer = () => {
+		Swal.fire({
+			title: 'Are you sure?',
+			text: 'Timer will be remove',
+			icon: 'warning',
+			confirmButtonText: 'Yes',
+			showDenyButton: true
+	  }).then((result) => {  
+		
+		
+		//TIMER REMOVE
+		if (result.isConfirmed) {  
+			
+			//ALERT
+			Swal.fire('Program was deleted', '', 'success') 
+			//ID NUMBER -1 
+			setTimerNumber( timerNumber > 0 ? timerNumber => timerNumber - 1 : timerNumber);
+			//FRONT TIMER DELETE
+			timerComponents.current[time].remove()
+			//VALVE ACTIONS =>
+
+
+		} else if (result.isDenied) {    
+			Swal.fire('Program was not deleted', '', 'info')  
+		 }
+	});
 	
-		 setTimerNumber( timerNumber > 0 ? timerNumber => timerNumber - 1 : timerNumber);
-		 timerComponents.current[time].remove()
+
 	}
 
 	//ADD TIMER COMPONENT

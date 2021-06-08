@@ -4,11 +4,18 @@ import Swal from 'sweetalert2';
 
 export const ElectroValveTimer = (props) => {
 	//Time Slector
-    // console.log(props)
+
+    // REFS
 	const initRef = useRef("");
 	const timerRef = useRef("");
+	const formCardRef = useRef("");
+	const formCardSectionRef = useRef("");
+	const buttonCardRef = useRef("");
 
 	//VALIDATION
+
+	const [isDisabled, setisDisabled] = useState(false);
+
 	const handleTimeSelect = (e) => {
 
 		e.preventDefault();
@@ -27,21 +34,41 @@ export const ElectroValveTimer = (props) => {
 		}
 
 		if(initHour.length === 0 || setMins.length === 0) 
-		{
+		{	
+			//FORM INVALID =>
 			Swal.fire({
 				title: 'Please complete all fields',
 				text: 'Hour and Timer ',
 				icon: 'error',
 				confirmButtonText: 'Ok'
-		  })}
-		if(initHour.length !== 0 && setMins.length !== 0) 
+		  })};
+		if(initHour.length !== 0 && setMins.length !== 0) {
+			//FORM VALID => ALERT
 			(Swal.fire({
-			title: 'Frame time selected',
-			text: 'Irrigation programmed',
-			icon: 'success',
-			confirmButtonText: 'Ok'
-		  }))
+			title: 'Are you sure?',
+			text: 'Irrigation will start in selected time',
+			icon: 'warning',
+			confirmButtonText: 'Yes',
+			showDenyButton: true
+		  		}).then((result) => {  
 
+					
+					if (result.isConfirmed) {   
+						Swal.fire('Irrigation programmed', '', 'success') 
+						//FORM VALID => STYLES
+						formCardRef.current.classList.add("active-hour")
+						buttonCardRef.current.classList.add("active-hour-button")
+						formCardSectionRef.current.classList.add("active-hour")
+						//FORM VALID => ACTION
+						setisDisabled(true)
+
+					} else if (result.isDenied) {    
+						Swal.fire('Changes are not saved', '', 'info')  
+					 }
+				})
+		  	);
+
+		}
 	};
 
 	//Placeholder Timer
@@ -59,30 +86,21 @@ export const ElectroValveTimer = (props) => {
 	return (
 		<>
 			<form className="valves__time-form " 
-			noValidate onSubmit={handleTimeSelect}>
+			noValidate onSubmit={handleTimeSelect}
+			ref={formCardRef}
+			>
 			<section>
 			<InputLabel id="label-init-valve1-01">Init</InputLabel>
 			<InputLabel id="label-timer-valve1-01">Time</InputLabel>
 			</section>
-			<section>
-				{/* <TextField
-					id={props.initId}
-					type="time"
-					defaultValue="00:00"
-					className="valves__textfield"
-					InputLabelProps={{
-						shrink: true,
-					}}
-					inputProps={{
-						step: 300, // 5 min
-					}}
-				/> */}
+			<section className="valves__selectors" ref={formCardSectionRef}>
 				<Select
 					labelId="label-init-valve1-01"
 					id={props.initId}
 					value={init01}
 					onChange={handleChangeInit}
 					ref={initRef}
+					disabled={isDisabled}
 				>
 					<MenuItem value={0}>00:00</MenuItem>
 					<MenuItem value={1}>01:00</MenuItem>
@@ -115,6 +133,7 @@ export const ElectroValveTimer = (props) => {
 					value={timer01}
 					onChange={handleChangeTimer}
 					ref={timerRef}
+					disabled={isDisabled}
 				>
 					<MenuItem value={5}>5 min</MenuItem>
 					<MenuItem value={15}>15 min</MenuItem>
@@ -123,7 +142,7 @@ export const ElectroValveTimer = (props) => {
 					<MenuItem value={59}>60 min</MenuItem>
 				</Select>
 				</section>
-				<input type="submit" value="Done" />
+				<input type="submit" value="Done" ref={buttonCardRef} />
 
 			</form>
 		</>

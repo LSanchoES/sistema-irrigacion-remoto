@@ -19,7 +19,10 @@ export const Temperatura = () => {
 	};
 
 	const options = {
+		maintainAspectRatio: false,
+		responsive: true,
 		scales: {
+
 			yAxes: [
 				{
 					ticks: {

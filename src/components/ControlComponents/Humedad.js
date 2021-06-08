@@ -26,6 +26,8 @@ export const Humedad = () => {
         };
     
         const options = {
+            maintainAspectRatio: false,
+            responsive: true,
             scales: {
                 yAxes: [
                     {

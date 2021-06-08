@@ -8,18 +8,19 @@
     text-align: center;
     border-radius: 6px;
     box-shadow: 0px 2px 5px $dark-gray;
+    width: 45vw;
+
 }
 .temperatura__content{
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-evenly;
+    align-items: center;
     width: 100%;
-    padding: 2rem;
+    height: 10vh;
     i{
         color: $black-gentle;
         font-size: 4ch;
-        align-self: flex-start;
         opacity: 0.7;   
     }
     h2{

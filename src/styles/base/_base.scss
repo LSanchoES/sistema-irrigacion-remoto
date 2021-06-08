@@ -15,6 +15,8 @@ body {
 main {
 	width: 100%;
 }
+
+//STATES
 .active {
 	color: $tertiary !important;
 }
@@ -22,14 +24,19 @@ main {
 	color: red!important;
 }
 .active-hour{
-	background-color: $quaternary !important;
-	box-shadow: 0px 0px 2px $pentakill inset  !important;
+	background-color: green  !important;
+	font-weight: bold !important;
+	div{color: $light-gray !important;}
+}
+.active-hour-button{
+	display: none !important;
 }
 .invalid{
 	border: 2px solid red;
-	
 }
-//SweetAler
+
+
+//SweetAlert
 .swal2-icon{
 	overflow: hidden !important;
 }

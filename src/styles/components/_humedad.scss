@@ -8,6 +8,7 @@
     text-align: center;
     border-radius: 6px;
     box-shadow: 0px 2px 5px $dark-gray;
+    width: 45vw;
 }
 .humedad__content{
     display: flex;
@@ -15,18 +16,17 @@
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    padding: 1rem;
+    height: 10vh;
     i{
         color: $black-gentle;
         font-size: 4ch;
-        align-self: flex-start;
         opacity: 0.8;   
-        margin-top: 1.3rem;
+
     }
 }
 
 .CircularProgressbar{
-    width: 11% !important;
+    width: 6ch !important;
     position:static !important;
     opacity: 0.8 !important;
 }

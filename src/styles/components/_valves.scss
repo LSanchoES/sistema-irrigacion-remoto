@@ -8,7 +8,7 @@
     align-items: center;
     margin: 0.5rem;
     height: 50vh;
-    width: 30vw;
+    width: 100%;
     background-color: $white-styled;
     border-radius: 6px;
     box-shadow: 0px 2px 5px $dark-gray;
@@ -59,15 +59,14 @@
     }
 
 }
+
 .valves__time-form{
 
     display: flex;
-    text-align: center;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-around;
     align-items: center;
-    width: 20vw;
+    width: 25vw;
     border-bottom: 2px solid  $pentakill;
     border-top: 2px solid  $pentakill;
     border-radius: 6px;
@@ -78,7 +77,6 @@
     section{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
     }
     label{
         
@@ -89,14 +87,14 @@
         margin-right: 2rem;
         color: $light-gray;
         &:nth-child(1){
-            margin-right: 2rem;
+            margin-right: 1.5rem;
+        }
+        &:nth-child(2){
+            margin-right: 0.9rem;
         }
 
     }
-    div{
-        margin-right: 2rem;
-        cursor: pointer;
-    }
+
         
     input[type=submit]{
         width: 100%;
@@ -117,14 +115,12 @@
         }
     }
 }
-.valves__textfield{
-    label{
-        position: initial;
-        margin-bottom: -1rem;
-        font-size: 2.5ch;
 
+.valves__selectors{
+    div{
+
+    &:nth-child(2){
+        margin-left: 3.5rem;
     }
-    input{
-        position: initial;
     }
 }
