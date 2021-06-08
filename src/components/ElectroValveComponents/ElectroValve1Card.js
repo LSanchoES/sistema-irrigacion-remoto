@@ -1,6 +1,8 @@
 import moment from "moment";
 import React, { useRef, useState } from "react";
 import { ElectroValveTimer } from "./ElectroValveTimer";
+import Swal from 'sweetalert2';
+
 
 export const ElectroValve1Card = () => {
 	//NOW TIME
@@ -23,7 +25,7 @@ export const ElectroValve1Card = () => {
 	//ADD TIMER COMPONENT
 	const newTimer = () => {
 
-		
+		if(timerNumber < 6){
 		setEnterTimer(
 			enterTimer.concat(
 				<section className="dashboard__timer-section"key={time} ref={item => (timerComponents.current[time] = item)} id={time}>
@@ -37,6 +39,14 @@ export const ElectroValve1Card = () => {
 			)
 			);
 		setTimerNumber(timerNumber => timerNumber+1);
+	}else{
+		Swal.fire({
+			title: 'Max timers are 5',
+			text: 'If you want another timer you need to remove one first',
+			icon: 'error',
+			confirmButtonText: 'Ok'
+		  })
+	}
 	};
 	return (
 		<div className="dashboard__valve-card">

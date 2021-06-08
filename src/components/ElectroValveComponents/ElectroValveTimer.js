@@ -6,6 +6,7 @@ export const ElectroValveTimer = (props) => {
 	//Time Slector
     // console.log(props)
 	const timerRef = useRef("");
+	const initRef = useRef("");
 
 	const handleTimeSelect = (e) => {
 
@@ -34,8 +35,13 @@ export const ElectroValveTimer = (props) => {
 
 	//Placeholder Timer
 	const [timer01, setTimer01] = useState("");
-	const handleChange = (event) => {
+	const handleChangeTimer = (event) => {
 		setTimer01(event.target.value);
+	};
+	//Placeholder Init
+	const [init01, setInit01] = useState("");
+	const handleChangeInit = (event) => {
+		setInit01(event.target.value);
 	};
 
 
@@ -47,7 +53,7 @@ export const ElectroValveTimer = (props) => {
 			<InputLabel id="label-timer-valve1-01">Time</InputLabel>
 			</section>
 			<section>
-				<TextField
+				{/* <TextField
 					id={props.initId}
 					type="time"
 					defaultValue="00:00"
@@ -58,12 +64,44 @@ export const ElectroValveTimer = (props) => {
 					inputProps={{
 						step: 300, // 5 min
 					}}
-				/>
+				/> */}
+				<Select
+					labelId="label-init-valve1-01"
+					id={props.initId}
+					value={init01}
+					onChange={handleChangeInit}
+					ref={initRef}
+				>
+					<MenuItem value={0}>00:00</MenuItem>
+					<MenuItem value={1}>01:00</MenuItem>
+					<MenuItem value={2}>02:00</MenuItem>
+					<MenuItem value={3}>03:00</MenuItem>
+					<MenuItem value={4}>04:00</MenuItem>
+					<MenuItem value={5}>05:00</MenuItem>
+					<MenuItem value={6}>06:00</MenuItem>
+					<MenuItem value={7}>05:00</MenuItem>
+					<MenuItem value={8}>08:00</MenuItem>
+					<MenuItem value={9}>09:00</MenuItem>
+					<MenuItem value={10}>10:00</MenuItem>
+					<MenuItem value={11}>11:00</MenuItem>
+					<MenuItem value={12}>12:00</MenuItem>
+					<MenuItem value={13}>13:00</MenuItem>
+					<MenuItem value={14}>14:00</MenuItem>
+					<MenuItem value={15}>15:00</MenuItem>
+					<MenuItem value={16}>16:00</MenuItem>
+					<MenuItem value={17}>17:00</MenuItem>
+					<MenuItem value={18}>18:00</MenuItem>
+					<MenuItem value={19}>19:00</MenuItem>
+					<MenuItem value={20}>20:00</MenuItem>
+					<MenuItem value={21}>21:00</MenuItem>
+					<MenuItem value={22}>22:00</MenuItem>
+					<MenuItem value={23}>23:00</MenuItem>
+				</Select>
 				<Select
 					labelId="label-timer-valve1-01"
 					id={props.timerId}
 					value={timer01}
-					onChange={handleChange}
+					onChange={handleChangeTimer}
 					ref={timerRef}
 				>
 					<MenuItem value={5}>5 min</MenuItem>

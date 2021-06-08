@@ -24,32 +24,17 @@
         margin: 1rem;
         padding: 0.5rem;
         width: 100%;
-    }
-    input[type=time]{
-        outline: none;
-        cursor: pointer;
-        background: transparent;
-        margin-right: 1rem;
-
-        transition: all 400ms;
-        padding: 0.5rem;
-        svg{
-            color: red;
+        margin-right: 2rem;
+        &:nth-child(1){
+            margin-right: 2rem;
         }
 
     }
-    input[type=number]{
-        outline: none;
+    div{
+        margin-right: 2rem;
         cursor: pointer;
-        background: transparent;
-        box-shadow: 0px 0px 4px $white-styled inset;
-
-        transition: all 400ms;
-        padding: 0.5rem;
-        &:hover{
-            box-shadow: -2px -2px 50px $white-styled inset;
-        }
     }
+        
     input[type=submit]{
         width: 100%;
         cursor: pointer;
