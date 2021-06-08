@@ -19,10 +19,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid $pentakill;
     width: 100%;
     min-height: 30%;
     background-color: $white-styled;
+    border-bottom: 4px double $pentakill;
     h1{
         color: $primary;
         font-size: 3ch;
