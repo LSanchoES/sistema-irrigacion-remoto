@@ -10,11 +10,16 @@ body {
 	width: 100vw;
 	scroll-behavior: smooth; //Volver smooth al top cuando scrolleamos
 	background-color:$light-gray;
+	margin: 0px;
+	padding: 0px;
 }
 
 main {
 	width: 100%;
+	margin: 0px;
+	padding: 0px;
 }
+
 
 //STATES
 .active {
@@ -25,8 +30,11 @@ main {
 }
 .active-hour{
 	background-color: green  !important;
-	font-weight: bold !important;
-	div{color: $light-gray !important;}
+	font-weight: bold !important;  
+	
+	label{
+		margin-right: 3rem !important;
+	}
 }
 .active-hour-button{
 	display: none !important;
@@ -65,4 +73,10 @@ main {
 	background: $tertiary;
 }
 
+@media(max-width:650px){
+	::-webkit-scrollbar {
 
+		width: 1px;
+		border: transparent;
+	}
+}

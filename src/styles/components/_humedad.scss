@@ -9,6 +9,7 @@
     border-radius: 6px;
     box-shadow: 0px 2px 5px $dark-gray;
     width: 45vw;
+    height: 45vh;
 }
 .humedad__content{
     display: flex;
@@ -16,7 +17,9 @@
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    height: 10vh;
+    height: 22%;
+    padding: 0.5rem;
+    overflow: hidden;
     i{
         color: $black-gentle;
         font-size: 4ch;
@@ -37,5 +40,23 @@
     align-items: center;
     background-color: $white-styled;
     padding: 2rem;
+    width: 100%;
+    height: 70%;
+    
+}
+@media(max-width: 850px){
+    .humedad__container{
+        margin: 0rem;
+        padding: 0rem;
+        width: 100vw;
+        height: 50vh;
+        margin-bottom: 1rem;
 
+    }
+    .humedad__content{
+        width: 100vw;
+    }
+    .humedad__chart{
+        width: 100%;
+    }
 }

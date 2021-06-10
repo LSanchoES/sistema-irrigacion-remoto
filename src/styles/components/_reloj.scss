@@ -40,3 +40,10 @@
     }
 
 }
+@media(max-width: 580px){
+    .reloj__component{
+        height: 20vh;
+        margin: 0rem;
+        flex-direction: column;
+    }
+}

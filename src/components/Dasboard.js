@@ -12,7 +12,9 @@ export const Dashboard = () => {
 	return (
 		<>
 			<div className="dashboard__container">
-				<Reloj />
+				<div className="dashboard__reloj">
+					<Reloj />
+				</div>
 				<div className="dashboard__valves">
 					<ElectroValve1Card />
 					<ElectroValve2Card />
@@ -22,11 +24,9 @@ export const Dashboard = () => {
 					<Temperatura />
 					<Humedad />
 				</div>
-
-				<Camera />
-				{/* <div className="dashboard__sidebar">
-
-				</div> */}
+				<div className="dashboard__camera">
+					<Camera />
+				</div>
 
 
 			</div>

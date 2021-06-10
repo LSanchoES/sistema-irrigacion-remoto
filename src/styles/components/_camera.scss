@@ -39,3 +39,19 @@
         }
     }
 }
+@media(max-width: 850px){
+    .camera__container{
+        width: 100%;
+        margin: 0rem;
+        pad: 0rem;
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media(max-width: 577px){
+    .camera__container{
+
+    }
+}
