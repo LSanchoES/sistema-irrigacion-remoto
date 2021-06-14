@@ -17,13 +17,20 @@ export const ElectroValveTimer = (props) => {
 	const [isDisabled, setisDisabled] = useState(false);
 
 	const handleTimeSelect = (e) => {
-
+		
 		e.preventDefault();
 
+		
 		let initHour = e.target[0].value;
 		let setMins = e.target[1].value;
+		//LOCAL STORAGE CHECK
 
-		
+		// if(localStorage)
+
+
+
+		//VALIDATIONS
+
 		if(initHour.length === 0) 
 		{
 			initRef.current.classList.add("invalid")
@@ -60,7 +67,10 @@ export const ElectroValveTimer = (props) => {
 						buttonCardRef.current.classList.add("active-hour-button")
 						formCardSectionRef.current.classList.add("active-hour")
 						//FORM VALID => ACTION
-						setisDisabled(true)
+						setisDisabled(true);
+						//localstorage
+						//init con prop y value
+						localStorage.setItem(props.initId , e.target[0].value);
 
 					} else if (result.isDenied) {    
 						Swal.fire('Changes are not saved', '', 'info')  
@@ -79,6 +89,7 @@ export const ElectroValveTimer = (props) => {
 	//Placeholder Init
 	const [init01, setInit01] = useState("");
 	const handleChangeInit = (event) => {
+		
 		setInit01(event.target.value);
 	};
 
@@ -102,30 +113,30 @@ export const ElectroValveTimer = (props) => {
 					ref={initRef}
 					disabled={isDisabled}
 				>
-					<MenuItem value={0}>00:00</MenuItem>
-					<MenuItem value={1}>01:00</MenuItem>
-					<MenuItem value={2}>02:00</MenuItem>
-					<MenuItem value={3}>03:00</MenuItem>
-					<MenuItem value={4}>04:00</MenuItem>
-					<MenuItem value={5}>05:00</MenuItem>
-					<MenuItem value={6}>06:00</MenuItem>
-					<MenuItem value={7}>05:00</MenuItem>
-					<MenuItem value={8}>08:00</MenuItem>
-					<MenuItem value={9}>09:00</MenuItem>
-					<MenuItem value={10}>10:00</MenuItem>
-					<MenuItem value={11}>11:00</MenuItem>
-					<MenuItem value={12}>12:00</MenuItem>
-					<MenuItem value={13}>13:00</MenuItem>
-					<MenuItem value={14}>14:00</MenuItem>
-					<MenuItem value={15}>15:00</MenuItem>
-					<MenuItem value={16}>16:00</MenuItem>
-					<MenuItem value={17}>17:00</MenuItem>
-					<MenuItem value={18}>18:00</MenuItem>
-					<MenuItem value={19}>19:00</MenuItem>
-					<MenuItem value={20}>20:00</MenuItem>
-					<MenuItem value={21}>21:00</MenuItem>
-					<MenuItem value={22}>22:00</MenuItem>
-					<MenuItem value={23}>23:00</MenuItem>
+					<MenuItem value={`${props.initId}-00:00`}>00:00</MenuItem>
+					<MenuItem value={`${props.initId}-01:00`}>01:00</MenuItem>
+					<MenuItem value={`${props.initId}-02:00`}>02:00</MenuItem>
+					<MenuItem value={`${props.initId}-03:00`}>03:00</MenuItem>
+					<MenuItem value={`${props.initId}-04:00`}>04:00</MenuItem>
+					<MenuItem value={`${props.initId}-05:00`}>05:00</MenuItem>
+					<MenuItem value={`${props.initId}-06:00`}>06:00</MenuItem>
+					<MenuItem value={`${props.initId}-07:00`}>07:00</MenuItem>
+					<MenuItem value={`${props.initId}-08:00`}>08:00</MenuItem>
+					<MenuItem value={`${props.initId}-09:00`}>09:00</MenuItem>
+					<MenuItem value={`${props.initId}-10:00`}>10:00</MenuItem>
+					<MenuItem value={`${props.initId}-11:00`}>11:00</MenuItem>
+					<MenuItem value={`${props.initId}-12:00`}>12:00</MenuItem>
+					<MenuItem value={`${props.initId}-13:00`}>13:00</MenuItem>
+					<MenuItem value={`${props.initId}-14:00`}>14:00</MenuItem>
+					<MenuItem value={`${props.initId}-15:00`}>15:00</MenuItem>
+					<MenuItem value={`${props.initId}-16:00`}>16:00</MenuItem>
+					<MenuItem value={`${props.initId}-17:00`}>17:00</MenuItem>
+					<MenuItem value={`${props.initId}-18:00`}>18:00</MenuItem>
+					<MenuItem value={`${props.initId}-19:00`}>19:00</MenuItem>
+					<MenuItem value={`${props.initId}-20:00`}>20:00</MenuItem>
+					<MenuItem value={`${props.initId}-21:00`}>21:00</MenuItem>
+					<MenuItem value={`${props.initId}-22:00`}>22:00</MenuItem>
+					<MenuItem value={`${props.initId}-23:00`}>23:00</MenuItem>
 				</Select>
 				<Select
 					labelId="label-timer-valve1-01"

@@ -39,7 +39,8 @@ export const ElectroValve3Card = () => {
 			//FRONT TIMER DELETE
 			timerComponents.current[time].remove()
 			//VALVE ACTIONS =>
-
+			//localstorage
+			localStorage.removeItem(`init-valve3-${timerNumber}`);
 
 		} else if (result.isDenied) {    
 			Swal.fire('Program was not deleted', '', 'info')  
@@ -56,7 +57,11 @@ export const ElectroValve3Card = () => {
 		setEnterTimer(
 			enterTimer.concat(
 				<section className="valves__timer-section"key={time} ref={item => (timerComponents.current[time] = item)} id={time}>
-					<i className="fas fa-trash" onClick={removeTimer}></i>
+					<i 	className="fas fa-trash" 
+						onClick={removeTimer}
+						id = {`valve3-${timerNumber}`}
+					>
+					</i>
 
 					<ElectroValveTimer
 						initId={`init-valve3-${timerNumber}`}

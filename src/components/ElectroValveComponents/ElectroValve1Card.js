@@ -19,7 +19,7 @@ export const ElectroValve1Card = () => {
 
 
 	//REMOVE TIMER COMPONENT
-	const removeTimer = () => {
+	const removeTimer = (e) => {
 		Swal.fire({
 			title: 'Are you sure?',
 			text: 'Timer will be remove',
@@ -37,10 +37,11 @@ export const ElectroValve1Card = () => {
 			//ID NUMBER -1 
 			setTimerNumber( timerNumber > 0 ? timerNumber => timerNumber - 1 : timerNumber);
 			//FRONT TIMER DELETE
-			timerComponents.current[time].remove()
+			timerComponents.current[time].remove();
 			//VALVE ACTIONS =>
-
-
+			//localstorage
+			localStorage.removeItem(`init-valve1-${timerNumber}`);
+			
 		} else if (result.isDenied) {    
 			Swal.fire('Program was not deleted', '', 'info')  
 		 }
@@ -56,7 +57,11 @@ export const ElectroValve1Card = () => {
 		setEnterTimer(
 			enterTimer.concat(
 				<section className="valves__timer-section"key={time} ref={item => (timerComponents.current[time] = item)} id={time}>
-					<i className="fas fa-trash" onClick={removeTimer}></i>
+					<i 	className="fas fa-trash" 
+						onClick={removeTimer}
+						id = {`valve1-${timerNumber}`}
+					>
+					</i>
 
 					<ElectroValveTimer
 						initId={`init-valve1-${timerNumber}`}
