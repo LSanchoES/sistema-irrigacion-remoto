@@ -25,10 +25,29 @@ export const ElectroValveTimer = (props) => {
 		let setMins = e.target[1].value;
 		//LOCAL STORAGE CHECK
 
-		// if(localStorage)
+		//storage -> No timer number in storage and inithour
 
+		if (localStorage.length >  0 ){
+		
+		try{
+		let storageKeyValve = localStorage.getItem(props.initId).slice(0,11); //Only valve (no timer number)
+		let storageKeyHour = localStorage.getItem(props.initId).slice(14,19); // Only Hour
+		let storageKey = storageKeyValve.concat(storageKeyHour);
+		//inithour 
+		let keyValve = initHour.slice(0,11);
+		let keyHour = initHour.slice(14,19);
+		let keyComplete = keyValve.concat(keyHour);
 
+		console.log(storageKey , keyComplete)
+		if(storageKey === keyComplete){
+			alert('NOOOO')
+		}else{console.log('Nope')}
 
+		}catch{(console.warn('NO LOCAL STORAGE YET'))}
+
+	}else{console.warn(' NO LOCAL STORAGE YET ')}
+
+	
 		//VALIDATIONS
 
 		if(initHour.length === 0) 

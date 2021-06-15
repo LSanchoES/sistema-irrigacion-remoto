@@ -22,13 +22,8 @@
     width: 100%;
     min-height: 30%;
     background-color: $white-styled;
-    box-shadow: 0px 0px 30px $secondary inset;
-    border-bottom: 2px solid $pentakill;
-    transition: all 1000ms;
-    &:hover{
-        box-shadow: 0px 0px 5px $secondary inset;
+    border-bottom: 2px solid $quaternary;
 
-    }
     h1{
         color: $primary;
         font-size: 3ch;
