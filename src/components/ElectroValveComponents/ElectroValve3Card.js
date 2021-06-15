@@ -39,8 +39,8 @@ export const ElectroValve3Card = () => {
 			//FRONT TIMER DELETE
 			timerComponents.current[time].remove()
 			//VALVE ACTIONS =>
-			//localstorage
-			localStorage.removeItem(`init-valve3-${timerNumber}`);
+
+			
 
 		} else if (result.isDenied) {    
 			Swal.fire('Program was not deleted', '', 'info')  

@@ -18,6 +18,7 @@ export const ElectroValve1Card = () => {
 	const timerComponents = useRef([])
 
 
+	
 	//REMOVE TIMER COMPONENT
 	const removeTimer = (e) => {
 		Swal.fire({
@@ -26,41 +27,42 @@ export const ElectroValve1Card = () => {
 			icon: 'warning',
 			confirmButtonText: 'Yes',
 			showDenyButton: true
-	  }).then((result) => {  
-		
-		
-		//TIMER REMOVE
-		if (result.isConfirmed) {  
+		}).then((result) => {  
 			
-			//ALERT
-			Swal.fire('Program was deleted', '', 'success') 
-			//ID NUMBER -1 
-			setTimerNumber( timerNumber > 0 ? timerNumber => timerNumber - 1 : timerNumber);
-			//FRONT TIMER DELETE
-			timerComponents.current[time].remove();
-			//VALVE ACTIONS =>
-			//localstorage
-			localStorage.removeItem(`init-valve1-${timerNumber}`);
 			
-		} else if (result.isDenied) {    
-			Swal.fire('Program was not deleted', '', 'info')  
-		 }
-	});
-	
+			//TIMER REMOVE
+			if (result.isConfirmed) {  
+				
+				//ALERT
+				Swal.fire('Program was deleted', '', 'success') 
+				//ID NUMBER -1 
+				setTimerNumber( timerNumber > 0 ? timerNumber => timerNumber - 1 : timerNumber);
+				//FRONT TIMER DELETE
+				timerComponents.current[time].remove();
+				//VALVE ACTIONS =>
 
+				
+			} else if (result.isDenied) {    
+				Swal.fire('Program was not deleted', '', 'info')  
+			}
+		});
+		
+		
 	}
-
+	
 	//ADD TIMER COMPONENT
 	const newTimer = () => {
-
+		
 		if(timerNumber < 6){
-		setEnterTimer(
-			enterTimer.concat(
-				<section className="valves__timer-section"key={time} ref={item => (timerComponents.current[time] = item)} id={time}>
+			setEnterTimer(
+				enterTimer.concat(
+					<section 
+					className="valves__timer-section"key={time}
+					ref={item => (timerComponents.current[time] = item)} id={time}>
 					<i 	className="fas fa-trash" 
 						onClick={removeTimer}
 						id = {`valve1-${timerNumber}`}
-					>
+						>
 					</i>
 
 					<ElectroValveTimer
@@ -70,16 +72,18 @@ export const ElectroValve1Card = () => {
 				</section>
 			)
 			);
-		setTimerNumber(timerNumber => timerNumber+1);
-	}else{
-		Swal.fire({
-			title: 'Max timers are 5',
-			text: 'If you want another timer you need to remove one first',
-			icon: 'error',
-			confirmButtonText: 'Ok'
-		  })
-	}
+			setTimerNumber(timerNumber => timerNumber+1);
+		}else{
+			Swal.fire({
+				title: 'Max timers are 5',
+				text: 'If you want another timer you need to remove one first',
+				icon: 'error',
+				confirmButtonText: 'Ok'
+			})
+		}
 	};
+
+
 	return (
 		<div className="valves__valve-card">
 			<div className="valves__valve-card-topbar">

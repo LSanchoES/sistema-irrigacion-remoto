@@ -23,29 +23,6 @@ export const ElectroValveTimer = (props) => {
 		
 		let initHour = e.target[0].value;
 		let setMins = e.target[1].value;
-		//LOCAL STORAGE CHECK
-
-		//storage -> No timer number in storage and inithour
-
-		if (localStorage.length >  0 ){
-		
-		try{
-		let storageKeyValve = localStorage.getItem(props.initId).slice(0,11); //Only valve (no timer number)
-		let storageKeyHour = localStorage.getItem(props.initId).slice(14,19); // Only Hour
-		let storageKey = storageKeyValve.concat(storageKeyHour);
-		//inithour 
-		let keyValve = initHour.slice(0,11);
-		let keyHour = initHour.slice(14,19);
-		let keyComplete = keyValve.concat(keyHour);
-
-		console.log(storageKey , keyComplete)
-		if(storageKey === keyComplete){
-			alert('NOOOO')
-		}else{console.log('Nope')}
-
-		}catch{(console.warn('NO LOCAL STORAGE YET'))}
-
-	}else{console.warn(' NO LOCAL STORAGE YET ')}
 
 	
 		//VALIDATIONS
@@ -87,9 +64,7 @@ export const ElectroValveTimer = (props) => {
 						formCardSectionRef.current.classList.add("active-hour")
 						//FORM VALID => ACTION
 						setisDisabled(true);
-						//localstorage
-						//init con prop y value
-						localStorage.setItem(props.initId , e.target[0].value);
+
 
 					} else if (result.isDenied) {    
 						Swal.fire('Changes are not saved', '', 'info')  
