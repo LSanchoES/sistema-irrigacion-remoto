@@ -36,7 +36,10 @@ export const ElectroValve1Card = () => {
 				//ALERT
 				Swal.fire('Program was deleted', '', 'success') 
 				//ID NUMBER -1 
-				setTimerNumber( timerNumber > 0 ? timerNumber => timerNumber - 1 : timerNumber);
+				setTimerNumber( timerNumber > 0 
+					? 
+					timerNumber => timerNumber - 1 
+					: timerNumber);
 				//FRONT TIMER DELETE
 				timerComponents.current[time].remove();
 				//VALVE ACTIONS =>
